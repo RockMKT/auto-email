@@ -16,19 +16,17 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { getContactsToNotify } from "../../lib/birthday-logic.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const currentDir = dirname(fileURLToPath(import.meta.url));
 
 // Si CONTACTS_FILE no está seteada, usa la base real. Para probar,
 // poné CONTACTS_FILE=data/contacts-test.json en las variables de
 // entorno de Netlify (temporalmente) y sacala cuando pases a producción.
-
 const contactsFileName = process.env.CONTACTS_FILE || "data/contacts.json";
 const contacts = JSON.parse(
-  readFileSync(join(__dirname, "../../", contactsFileName), "utf-8")
+  readFileSync(join(currentDir, "../../", contactsFileName), "utf-8")
 );
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
 const TEMPLATE_7_DAYS = process.env.SENDGRID_TEMPLATE_ID_7_DAYS;
 const TEMPLATE_3_DAYS = process.env.SENDGRID_TEMPLATE_ID_3_DAYS;
 const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL;
