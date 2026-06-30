@@ -1,0 +1,16 @@
+[
+  {
+    "email": "gonzalomolina.cs@gmail.com",
+    "name": "Gonza (prueba 7 días)",
+    "birthMonth": 7,
+    "birthDay": 7,
+    "birthYear": 2000
+  },
+  {
+    "email": "marketing@rockandfellers.com.ar",
+    "name": "Rock&Fellers (prueba 3 días)",
+    "birthMonth": 7,
+    "birthDay": 3,
+    "birthYear": 2000
+  }
+]
