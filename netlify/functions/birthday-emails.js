@@ -75,7 +75,7 @@ async function sendBatch(contactsToSend, kind, templateId) {
 }
 
 const handler = async () => {
-  const { sevenDaysBefore, threeDaysBefore } = getContactsToNotify(contacts);
+   const { sevenDaysBefore, threeDaysBefore } = getContactsToNotify(contacts);
 
   const result7 = await sendBatch(sevenDaysBefore, "7days", TEMPLATE_7_DAYS);
   const result3 = await sendBatch(threeDaysBefore, "3days", TEMPLATE_3_DAYS);
