@@ -1,0 +1,9 @@
+# netlify.toml
+# Proyecto sin frontend real: solo hosteamos una funcion programada.
+
+[build]
+  publish = "public"
+  command = "npm install"
+
+[functions]
+  node_bundler = "esbuild"
